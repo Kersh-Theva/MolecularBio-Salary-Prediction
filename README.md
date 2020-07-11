@@ -5,7 +5,7 @@
 - Engineered features from the text of each job description and job title to determine whether "PhD" was included in the position and simplify job titles into a small number of categories
 
 ## Code and Resources Used 
-**Python Version:** 2.7.16
+**Python Version:** 2.7.16 <br>
 **Packages:** pandas, numpy, sklearn, matplotlib, selenium 
 **For Web Framework Requirements:** pip install -r requirements.txt (not ready yet) 
 **Selenium scraper tool:** https://github.com/arapfaik/scraping-glassdoor-selenium (credit to arapfaik)
