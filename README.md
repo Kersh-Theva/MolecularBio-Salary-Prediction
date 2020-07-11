@@ -6,8 +6,8 @@
 
 ## Code and Resources Used 
 **Python Version:** 2.7.16 <br>
-**Packages:** pandas, numpy, sklearn, matplotlib, selenium 
-**For Web Framework Requirements:** pip install -r requirements.txt (not ready yet) 
+**Packages:** pandas, numpy, sklearn, matplotlib, selenium <br>
+**For Web Framework Requirements:** pip install -r requirements.txt (not ready yet) <br>
 **Selenium scraper tool:** https://github.com/arapfaik/scraping-glassdoor-selenium (credit to arapfaik)
 
 ## Web Scraping
