@@ -2,7 +2,8 @@
 
 - Created a tool to estimate molecular biologist salaries to help molecular biology researchers negotiate their income. 
 - Scraped over 1000 job listings from Glassdoor using python and the Selenium scraper tool 
-- Engineered features from the text of each job description and job title to determine whether "PhD" was included in the position and classified job titles
+- Engineered features from the text of each job description to determine whether "PhD" was included in the position
+- Classified job titles using text from each job title
 
 ## Code and Resources Used 
 **Python Version:** 2.7.16 <br>
