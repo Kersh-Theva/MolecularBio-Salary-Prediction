@@ -1,4 +1,4 @@
-# MolecularBioSalary_Prediction
+# Molecular Biologist Salary Prediction
 
 - Created a tool to estimate molecular biologist salaries to help molecular biology researchers negotiate their income. 
 - Scraped over 1000 job listings from Glassdoor using python and the Selenium scraper tool 
