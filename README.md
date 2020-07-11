@@ -4,8 +4,6 @@
 - Scraped over 1000 job listings from Glassdoor using python and the Selenium scraper tool 
 - Engineered features from the text of each job description and job title to determine whether "PhD" was included in the position and simplify job titles into a small number of categories
 
-
-
 ## Code and Resources Used 
 **Python Version:** 2.7.16
 **Packages:** pandas, numpy, sklearn, matplotlib, selenium 
@@ -46,15 +44,15 @@ After scraping the data, I cleaned it up to make it more usable. I made the foll
 - Simplified job title
 
 ## EDA 
-- Used explorata data analysis to find:
   
+![Companies](https://github.com/Kersh-Theva/MolecularBioSalary_Prediction/blob/master/ExploratoryDataAnalysis/Top10-01.png)
+**Figure 1. The top companies hiring right now.** The companies hiring the most in our job listing database are almost all involved in COVID-related research as of July 2020. 
 
-**The top companies hiring right now (most involved in COVID-related research as of July 2020)**
+![States](https://github.com/Kersh-Theva/MolecularBioSalary_Prediction/blob/master/ExploratoryDataAnalysis/JobsvsState.png)
+**The states with the most molecular biology job listings.** California, Massachussettes and New York lead the way with the majority of job listings in our database. 
 
-
-**The states with the most molecular biology job listings**
-
-**The relationship between company rating and company age**
+![Company Rating](https://github.com/Kersh-Theva/MolecularBioSalary_Prediction/blob/master/ExploratoryDataAnalysis/RatingvCompanyAge.png)
+**Figure 3. The relationship between company rating and company age.** Company ratings have a large variance for young companies, but tend to converge on a mean of ~3.7
 
 ![Correlation Heatmap](https://github.com/Kersh-Theva/MolecularBioSalary_Prediction/blob/master/ExploratoryDataAnalysis/CorrelationHeatmap.png)
-**Correlations between key features and the mean salary**
+**Figure 4. Pearson correlations between key features and the mean salary** Most of our features correlate weakly with the Mean Salary. The highest positive correlation can be seen between Company Age, Company Revenue and the Mean Salary of the position. 
