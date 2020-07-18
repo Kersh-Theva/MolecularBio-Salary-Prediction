@@ -61,3 +61,15 @@ After scraping the data, I cleaned it up to make it more usable. I made the foll
 ![Correlation Heatmap](https://github.com/Kersh-Theva/MolecularBioSalary_Prediction/blob/master/ExploratoryDataAnalysis/CorrelationHeatmap.png)
 
 **Figure 4. Pearson correlations between key features and the mean salary** Most of our features correlate weakly with the Mean Salary. The highest positive correlation can be seen between Company Age, Company Revenue and the Mean Salary of the position. 
+
+
+Coming soon:
+
+1. Scraper
+2. Cleanup 
+3. EDA (Mao, Mean Salary vs. Company Age, Revenue)
+4. ML1
+5. EDA (Chart, WordFinder)
+6. ML2, ML3 (RMSE, Accuracy, Feature importance)
+7. Productionize
+
