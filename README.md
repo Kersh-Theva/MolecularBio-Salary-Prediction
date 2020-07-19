@@ -2,8 +2,7 @@
 
 - Created a tool to estimate molecular biologist salaries to help molecular biology researchers negotiate their income. 
 - Scraped over 1000 job listings from Glassdoor using python and the Selenium scraper tool 
-- Engineered features from the text of each job description to determine whether "PhD" was included in the position
-- Classified job titles using text from each job title
+- Engineered features from the text of each job description and job title 
 
 ## Code and Resources Used 
 **Python Version:** 2.7.16 <br>
@@ -13,7 +12,7 @@
 
 ## Web Scraping
 
-Made a few changes to the Selenium code (referenced above) to scrape 1200 "Molecular Biology" job postings from glassdoor.com. These jobs came from all over the US. With each job, we got the following attribute: 
+Made a few changes to the Selenium code (referenced above) to scrape 1200 "Molecular Biology" job postings from glassdoor.com. These jobs came from all over the US. With each job, we got the following attributes: 
 
 - Job Title
 - Min. and Max. Salary Estimate
@@ -30,7 +29,7 @@ Made a few changes to the Selenium code (referenced above) to scrape 1200 "Molec
 - Company Annual Revenue
 - Competitors 
 
-## Data Cleaning 
+## Data Cleaning - Phase 1
 
 After scraping the data, I cleaned it up to make it more usable. I made the following changes to create the final variables: 
 
@@ -68,8 +67,8 @@ Coming soon:
 1. Scraper
 2. Cleanup 
 3. EDA (Mao, Mean Salary vs. Company Age, Revenue)
-4. ML1
-5. EDA (Chart, WordFinder)
-6. ML2, ML3 (RMSE, Accuracy, Feature importance)
+4. EDA (Chart, WordFinder)
+5. ML2, ML3 (RMSE, Accuracy, Feature importance)
+6. Error Analysis
 7. Productionize
 
