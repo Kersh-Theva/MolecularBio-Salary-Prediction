@@ -72,7 +72,7 @@ Coming soon:
 Future projects: 
 1. **Classification** with tumor mutation data and **neural networks** using Kaggle data 
 2. **Hierarchical clustering** of lab evolution data using **C++**
-3. **Chemo-informatics** for pathway building for target products with **distributed computing**
+3. **Metabolic modelling** for pathway building for target products with **distributed computing**
 
 Need to show:
 1. Classification 
@@ -85,4 +85,4 @@ Need to show:
 8. OOP **X**
 9. Data scraping **X**
 10. Error analysis **X**
-11. Feature analysis **X**
+11. Metabolic modelling 
