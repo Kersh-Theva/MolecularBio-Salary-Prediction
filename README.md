@@ -61,14 +61,23 @@ After scraping the data, I cleaned it up to make it more usable. I made the foll
 
 **Figure 4. Pearson correlations between key features and the mean salary** Most of our features correlate weakly with the Mean Salary. The highest positive correlation can be seen between Company Age, Company Revenue and the Mean Salary of the position. 
 
+## Machine Learning Models 
+
+![ML Model Summary](https://github.com/Kersh-Theva/MolecularBioSalary_Prediction/blob/master/MLModels/ModelImprovements.pdf)
+
+**Figure 5. Comparing machine learning models for minimum, maximum and mean salary.** Comparisons of the best regression model for a basic training set without natural language processing ("Base"), with processing ("Description") and the prediction of minimum salary ("Min."), mean salary ("Mean") and max salary ("Max"). Each model was scored based on the mean absolute error (MAE) and accuracy score (1-mean absolute percent error) for the test data. Mean salary was chosen for further optimization because of its potential utility for the user. After further optimization, mean salary model had 10% improved accuracy and 50% improved MAE:accuracy ratio compared to the base model. 
+
+
+![Feature Importances](https://github.com/Kersh-Theva/MolecularBioSalary_Prediction/blob/master/MLModels/featureImportance.svg)
+**Figure 6. Plotting the 10 most important features for the optimal machine learning model.** 
+
+## Productionized Model
 
 Coming soon:
 
-1. Scraper
-2. Cleanup 
-3. EDA (Mao, Mean Salary vs. Company Age, Revenue)
-4. EDA (Chart, WordFinder)
-5. ML2, ML3 (RMSE, Accuracy, Feature importance)
-6. Error Analysis
-7. Productionize
+1. Scraper (**done**)
+2. Cleanup (**done**)
+3. EDA (Mao, Mean Salary vs. Company Age, Revenue, wordFinder) (**done**)
+4. ML2, ML3 (RMSE, Accuracy, Feature importance)
+5. Productionize
 
