@@ -1,7 +1,8 @@
 # Molecular Biologist Salary Prediction
-- Created a tool to estimate molecular biologist salaries to help molecular biology researchers negotiate their income. 
+- Created a tool to estimate molecular biologist salaries to help young researchers negotiate their income. 
 - Scraped over 1000 job listings from Glassdoor using python and the Selenium scraper tool 
 - Engineered features from the text of each job description and job title 
+Things I'd like to add: Make web app, using OOP to convert input data to x_features
 
 ## Code and Resources Used 
 **Python Version:** 2.7.16 <br>
@@ -67,3 +68,21 @@ Coming soon:
 5. Productionize
 
 (Need to fix Figure 7, Figure 5, and Figure 4.)
+
+Future projects: 
+1. **Classification** with tumor mutation data and **neural networks** using Kaggle data 
+2. **Hierarchical clustering** of lab evolution data using **C++**
+3. **Chemo-informatics** for pathway building for target products with **distributed computing**
+
+Need to show:
+1. Classification 
+2. Regression **X**
+3. Clustering 
+4. C++
+5. Distributed computing
+6. Neural networks
+7. Containerized **X**
+8. OOP **X**
+9. Data scraping **X**
+10. Error analysis **X**
+11. Feature analysis **X**
