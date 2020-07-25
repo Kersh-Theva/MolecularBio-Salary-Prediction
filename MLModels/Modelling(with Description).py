@@ -242,6 +242,9 @@ descriptTestMean = modelTest(modelList, x_train, y_trainMean, x_test, y_testMean
 descriptTestMin = modelTest(modelList, x_train, y_trainMin, x_test, y_testMin, polynomial=False, degree=3)
 descriptTestMax = modelTest(modelList, x_train, y_trainMax, x_test, y_testMax, polynomial=False, degree=3)
 
+descriptTrainMean = modelTest(modelList, x_train, y_trainMean, x_train, y_trainMean, polynomial=False, degree=3)
+descriptTrainMin = modelTest(modelList, x_train, y_trainMin, x_train, y_trainMean, polynomial=False, degree=3)
+descriptTrainMax = modelTest(modelList, x_train, y_trainMax, x_train, y_trainMean, polynomial=False, degree=3)
 #------------------------------------------------------------
 
 #Randomized gridsearch 
@@ -296,8 +299,13 @@ gboostRandomGrid = {'criterion': ['mae'],
                     }
 
 gBoost = GradientBoostingRegressor() 
+
+#Accuracy on test set
 bestRandomGradientDB = randomSearch(gBoost, gboostRandomGrid, x_train, y_trainMean, x_test, y_testMean, n_iterations = 30, cv=3)
- 
+
+#Accuracy on train test
+bestRandomBoostTrainDB = randomSearch(gBoost, gboostRandomGrid, x_train, y_trainMean, x_train, y_trainMean, n_iterations = 30, cv=3)
+
 #BestBoost
 #{'n_estimators': 100, 'max_features': 'log2', 'criterion': 'mae'}
 #------------------------------------------------------------
@@ -399,13 +407,17 @@ featureExtract(bestModel, x_train, y_trainMean, 10, "/Users/kershtheva/Desktop/M
  
 import seaborn as sns
 
-def modelDisplay(modelList, xColumn, yColumn):
+def modelDisplay(modelList):
     '''
-    Show the MAE, accuracy and accuracy:MAE values for the best model in each DB in modelList and display values in three bar plots
+    Show the train accuracy, test accuracy and accuracy differences (variance) for the best model in each DB in modelList.
+    Display values in three bar plots.
         
     Arguments:
     modelList -- List of databases to concatenate and display data - assumes list of dataframes, 7 models provided
 
+    Returns:
+    Barplots for each of the three metrics indicated above. Save figure to hard-coded file path. 
+    Database containing each of the values that was plotted. 
     '''
     #Concatenate pd models
     categoryList = ['Base - Min.' ,'Description - Min.', 
@@ -413,62 +425,92 @@ def modelDisplay(modelList, xColumn, yColumn):
                     'Base - Mean', 'Description  - Mean',  'Optimized - Mean']
     
     #Initialize lists
-    maeValues = []
-    accuracyValues = []
-    ratioList = []
+    trainAccuracyValues = []
+    testAccuracyValues = []
+    varianceList = []
+    counter = 1
     
     #Itereate through models
     for model in modelList:
         
-        #Find max value of accuracy and append all values of that row to relevant lists
-        maxix = model.Accuracy.idxmax(axis=0) 
+        #If it's a database for test accuracies
+        if counter%2 == 0:
         
-        accuracyValue = model.loc[maxix, 'Accuracy'] 
-        accuracyValues.append(accuracyValue)
+            #Find max value of accuracy and append all values of that row to relevant lists
+            maxix = model.Accuracy.idxmax(axis=0) 
+            
+            testAccuracyValue = model.loc[maxix, 'Accuracy'] 
+            testAccuracyValues.append(testAccuracyValue)
         
-        maeValue = model.loc[maxix, 'MAE'] 
-        maeValues.append(maeValue)
+        #If it's a database for train accuacies
+        else: 
+            
+            #Find max value of accuracy and append all values of that row to relevant lists
+            maxix = model.Accuracy.idxmax(axis=0) 
+            
+            trainAccuracyValue = model.loc[maxix, 'Accuracy'] 
+            trainAccuracyValues.append(trainAccuracyValue)
         
-        accuracyMAERatio = accuracyValue/maeValue
-        ratioList.append(accuracyMAERatio)
+        counter += 1 
         
-      
+    #Iterate through indices of the testAccuracy list and compare to train accuracy
+    for ix in range(len(testAccuracyValues)): 
+        
+        variance = trainAccuracyValues[ix] - testAccuracyValues[ix]
+        varianceList.append(variance)
+        
     #Create dataframe with data
-    fullList = list(zip(categoryList, maeValues, accuracyValues, ratioList))
-    maxDB = pd.DataFrame(fullList, columns=['Model', 'Mean Absolute Error', 'Accuracy %', 'Accuracy:MAE Ratio'])
+    fullList = list(zip(categoryList, trainAccuracyValues, testAccuracyValues, varianceList))
+    maxDB = pd.DataFrame(fullList, columns=['Model', 'Train Accuracy (%)', 'Test Accuracy (%)', 'Variance'])
     
     #Plot data in 2 plots with SNS barplot..
     sns.set(style="ticks", palette="pastel")
     f, (ax1, ax2, ax3) = plt.subplots(3, 1, figsize=(12, 10), sharex=False)
     
     #Accuracy Data
-    sns.barplot(data=maxDB, x='Model', y = 'Accuracy %', palette="rocket", ax=ax1)
+    sns.barplot(data=maxDB, x='Model', y = 'Train Accuracy (%)', palette="rocket", ax=ax1)
     ax1.axhline(0, color="k", clip_on=False)
-    ax1.set_ylabel("Test Accuracy (%)")
+    ax1.set_ylabel('Train Accuracy (%)')
     #plt.savefig("/Users/kershtheva/Desktop/MolecularBioSalary_Prediction/Accuracy.pdf")
 
     #MAE Data
-    sns.barplot(data=maxDB, x='Model', y = 'Mean Absolute Error', palette = "rocket", ax=ax2)
+    sns.barplot(data=maxDB, x='Model', y = 'Test Accuracy (%)', palette = "rocket", ax=ax2)
     ax2.axhline(0, color="k", clip_on=False)
-    ax2.set_ylabel("Mean Absolute Error")
+    ax2.set_ylabel('Test Accuracy (%)')
     
     #Ratio Data
-    sns.barplot(data=maxDB, x='Model', y = 'Accuracy:MAE Ratio', palette = "rocket", ax=ax3)
-    ax2.axhline(0, color="k", clip_on=False)
-    ax2.set_ylabel("Mean Absolute Error")
+    sns.barplot(data=maxDB, x='Model', y = 'Variance', palette = "rocket", ax=ax3)
+    ax3.axhline(0, color="k", clip_on=False)
+    ax3.set_ylabel('Variance (Train-Test)')
 
     # Finalize the plot
     sns.despine(bottom=False)
     plt.setp(f.axes)
     plt.tight_layout(h_pad=2)
-    plt.savefig("/Users/kershtheva/Desktop/MolecularBioSalary_Prediction/ModelImprovements.svg")
+    plt.savefig("/Users/kershtheva/Desktop/MolecularBioSalary_Prediction/MLModels/ModelImprovements.svg")
     
-    
+    return maxDB
     
 #Combining the databases together and plotting them 
-modelList = [baseTestMin, descriptTestMin, baseTestMax, descriptTestMax, baseTestMean, descriptTestMean, bestRandomGradientDB]
-modelDisplay = modelDisplay(modelList, 'MAE', 'Accuracy')    
-    
+bestRandomBoostTestDB=bestRandomGradientDB
+modelList = [baseTestMin, 
+             baseTrainMin, 
+             descriptTestMin, 
+             descriptTrainMin, 
+             baseTestMax, 
+             baseTrainMax,
+             descriptTestMax, 
+             descriptTrainMax,
+             baseTestMean, 
+             baseTrainMean,
+             descriptTestMean, 
+             descriptTrainMean,
+             bestRandomBoostTestDB,
+             bestRandomBoostTrainDB]
+
+modelDisplay = modelDisplay(modelList)    
+
+modelDisplay.to_csv("/Users/kershtheva/Desktop/MolecularBioSalary_Prediction/MLModels/ModelImprovements.csv")
     
     
     
