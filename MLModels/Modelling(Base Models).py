@@ -15,7 +15,7 @@ from sklearn.preprocessing import MinMaxScaler
 %matplotlib inline
 
 #Read in csv from post-EDA analysis
-glassdoorDB = pd.read_csv("/Users/kershtheva/Desktop/MolecularBioSalary_Prediction/glassdoorDB_postEDA.csv")
+glassdoorDB = pd.read_csv("/Users/kershtheva/Desktop/MolecularBioSalary_Prediction/ExploratoryDataAnalysis/glassdoorDB_postEDA.csv")
 
 #Take out target: Mean Salary
 yMean = glassdoorDB['Mean Salary'].values
@@ -239,5 +239,10 @@ def modelTest(modelList, trainFeatures, trainTarget, testFeatures, testTarget, p
 baseTestMean = modelTest(modelList, x_train, y_trainMean, x_test, y_testMean, polynomial=False, degree=3)
 baseTestMin = modelTest(modelList, x_train, y_trainMin, x_test, y_testMin, polynomial=False, degree=3)
 baseTestMax = modelTest(modelList, x_train, y_trainMax, x_test, y_testMax, polynomial=False, degree=3)
+
+baseTrainMean = modelTest(modelList, x_train, y_trainMean, x_train, y_trainMean, polynomial=False, degree=3)
+baseTrainMin = modelTest(modelList, x_train, y_trainMin, x_train, y_trainMean, polynomial=False, degree=3)
+baseTrainMax = modelTest(modelList, x_train, y_trainMax, x_train, y_trainMean, polynomial=False, degree=3)
+ 
 
 #------------------------------------------------------------ 
