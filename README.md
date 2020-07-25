@@ -67,7 +67,7 @@ Coming soon:
 4. ML2, ML3 (RMSE, Accuracy, Feature importance) (**done**)
 5. Productionize
 
-(Need to fix Figure 7, Figure 5, and Figure 4.)
+(Need to fix Figure 7, Figure 5, and Figure 4., added ipynb for postEDA/secondcleanup)
 
 Future projects: 
 1. **Classification** with tumor mutation data and **neural networks** using Kaggle data 
