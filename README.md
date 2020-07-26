@@ -91,3 +91,4 @@ Things to consider:
 1. Productionizing the model so that it can accept databases and return outputs in batch. 
 2. Analysing human performance as finding the value within a range or training ensemble models for the mean
 3. Training with more data, changing the regression model algorithm
+4. Change back to /Users/kershtheva/Desktop/Data\ Science\ Projects/DS\ Project\ 1\ Repo/glassdoorDB_postEDA.csv
