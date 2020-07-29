@@ -92,3 +92,5 @@ Things to consider:
 2. Analysing human performance as finding the value within a range or training ensemble models for the mean
 3. Training with more data, changing the regression model algorithm
 4. Change back to /Users/kershtheva/Desktop/Data\ Science\ Projects/DS\ Project\ 1\ Repo/glassdoorDB_postEDA.csv
+5. Sort keys of dict 
+6. Add location data 
