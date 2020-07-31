@@ -70,7 +70,7 @@ After training ML models without a job description (models names start with pref
 
 ![ML Model Summary](https://github.com/Kersh-Theva/MolecularBioSalary_Prediction/blob/master/MLModels/ModelImprovements.svg)<br>
 **Figure 5. Comparing machine learning models for minimum, maximum and mean salary.** Comparisons of the best regression model for a basic training set without natural language processing ("Base"), with processing ("Description") and the prediction of minimum salary ("Min."), mean salary ("Mean") and max salary ("Max"). Each model was scored based on the mean absolute error (MAE) and accuracy score (1-mean absolute percent error) for the test data. Mean salary was chosen for further optimization because of its potential utility for the user. After further optimization, mean salary model had 56.7% accuracy and the lowest variance. <br>
-![Feature Importances](https://github.com/Kersh-Theva/MolecularBioSalary_Prediction/blob/master/MLModels/featureImportance.svg) <br>
+![Feature Importances](https://github.com/Kersh-Theva/MolecularBio-Salary-Prediction/blob/master/MLModels/featureImportance.svg) <br>
 **Figure 6. Plotting the 10 most important features for the optimal machine learning model.** 
 
 |             | Human Performance | Base Model - Bias | Base Model - Variance | Description Model - Bias | Description Model - Variance |
