@@ -73,7 +73,14 @@ After training ML models without a job description (models names start with pref
 ![Feature Importances](https://github.com/Kersh-Theva/MolecularBioSalary_Prediction/blob/master/MLModels/featureImportance.svg) <br>
 **Figure 6. Plotting the 10 most important features for the optimal machine learning model.** 
 
-**Table 1. Error Analysis Chart.** (coming soon)
+|             | Human Performance | Base Model - Bias | Base Model - Variance | Description Model - Bias | Description Model - Variance |
+|-------------|-------------------|-------------------|-----------------------|--------------------------|------------------------------|
+| Min. Salary | 64%               | 20%               | -8%                   | 26%                      | -13%                         |
+| Max. Salary | 74%               | 16%               | 18%                   | 21%                      | -14%                         |
+| Mean Salary | 71%               | 22%               | 5%                    | 19%                      | -4%                          | <br>
+
+
+**Table 1. Error Analysis Chart.** Analysis of the bias and variance for min. salary, max. salary and mean salary predictions with ML model and human performance.
 
 ## Strategies for Improvement 
 1. Changing the target variable to a range as opposed to a specific number. 
