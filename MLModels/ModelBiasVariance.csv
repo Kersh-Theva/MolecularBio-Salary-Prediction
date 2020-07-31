@@ -1,0 +1,6 @@
+﻿,Model Accuracy (1 - Mean Absolute Percent Error),,,,,,
+,Human Performance ,Base Model,,Description Model ,,Optimized Model,
+,,Bias ,Variance,Bias ,Variance,Bias ,Variance
+Min,64%,20%,-8%,26%,-13%,,
+Max,74%,16%,18%,21%,-14%,,
+Mean,71%,22%,5%,23%,12%,19%,-4%
