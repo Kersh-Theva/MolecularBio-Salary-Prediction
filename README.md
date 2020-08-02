@@ -88,4 +88,4 @@ After training ML models without a job description (models names start with pref
 3. Show the most important features for baseline model to compare to 'description' model. 
 4. Add location data to ML model and see if it improves accuracy. 
 
-Debugs required: Sort dict keys from JSON input parameters, determine reason for negative variance values.  
+Debugs required: Sort dict keys from JSON input parameters, determine reason for negative variance values, clean up folders a bit more (e.g. remove DSP1 Repo)
