@@ -74,18 +74,19 @@ After training ML models without a job description (models names start with pref
 **Figure 6. Plotting the 10 most important features for the optimal machine learning model.** The features from the optimized model that had the top 10 highest weights for mean salary prodiction were plotted. Company gae, company rating and max. experience (an engineered feature) had the greatest importance. 
 
 |             | Human Performance | Base Model - Bias | Base Model - Variance | Description Model - Bias | Description Model - Variance |
-|-------------|-------------------|-------------------|-----------------------|--------------------------|------------------------------|
+|-------------|:-----------------:|:-----------------:|:---------------------:|:------------------------:|:----------------------------:|
 | Min. Salary | 64%               | 20%               | -8%                   | 26%                      | -13%                         |
 | Max. Salary | 74%               | 16%               | 18%                   | 21%                      | -14%                         |
 | Mean Salary | 71%               | 22%               | 5%                    | 19%                      | -4%                          | <br>
 
 
-**Table 1. Error Analysis Chart.** Analysis of the bias and variance for min. salary, max. salary and mean salary predictions with ML model and human performance.
+**Table 1. Error Analysis Chart.** Analysis of the bias and variance for min. salary, max. salary and mean salary predictions with ML model and human performance. Special thanks to Arturo, Jay, Ed, Jake and Max for contributing to the human performance survey. 
 
 ## Strategies for Improvement 
 1. Changing the target variable to a range as opposed to a specific number. 
 2. Training with more data to improve variance or the learning rate for bias improvements. Change the regression model algorithm to improve both. 
 3. Show the most important features for baseline model to compare to 'description' model. 
 4. Add location data to ML model and see if it improves accuracy. 
+5. Determine the variance on the accuracy scores for the model vs. humans to see whether there are striking differences. 
 
 Debugs required: Sort dict keys from JSON input parameters, determine reason for negative variance values, clean up folders a bit more (e.g. remove DSP1 Repo)
