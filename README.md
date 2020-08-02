@@ -1,5 +1,5 @@
 # Molecular Biologist Salary Prediction: Project Overview
-- Created a tool to estimate molecular biologist salaries (best model accuracy: 60%) to help biologists negotiate income. 
+- Created a tool to estimate salaries for jobs in molecular biology (best model accuracy: 60%) to help molecular biologists negotiate income. 
 - Scraped over 1000 job listings from Glassdoor using python and the Selenium scraper tool 
 - Engineered features from the text of each job description and job title 
 - Optimized regression model and measured variance and bias compared to human performance
