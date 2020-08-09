@@ -5,8 +5,6 @@
 - Optimized regression model and measured variance and bias compared to human performance
 - Productionized model and implemented a web app using Heroku (flask-ml-api-mbiosalary)
 
-Work inspired by "Data Science from Scratch" Youtube series from [Ken Jee](https://www.youtube.com/channel/UCiT9RITQ9PW6BhXK0y2jaeg). 
-
 ## Code and Resources Used 
 **Python Version:** 2.7.16 and 3.8.3 <br>
 **Packages:** pandas, numpy, sklearn, matplotlib, selenium, flask, json, pickle <br>
@@ -14,6 +12,7 @@ Work inspired by "Data Science from Scratch" Youtube series from [Ken Jee](https
 **Selenium scraper tool:** https://github.com/arapfaik/scraping-glassdoor-selenium (credit to arapfaik) <br>
 **Scraper article:** https://towardsdatascience.com/selenium-tutorial-scraping-glassdoor-com-in-10-minutes-3d0915c6d905 <br>
 **Flask Productionization:** https://towardsdatascience.com/productionize-a-machine-learning-model-with-flask-and-heroku-8201260503d2 <br>
+Work inspired by "Data Science from Scratch" Youtube series from [Ken Jee](https://www.youtube.com/channel/UCiT9RITQ9PW6BhXK0y2jaeg). <br>
 
 ## Web Scraping
 Made a few changes to the Selenium code (referenced above) to scrape 1200 "Molecular Biology" job postings from glassdoor.com. These jobs came from all over the US. With each job, we got the following attributes: 
