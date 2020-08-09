@@ -5,6 +5,8 @@
 - Optimized regression model and measured variance and bias compared to human performance
 - Productionized model and implemented a web app using Heroku (flask-ml-api-mbiosalary)
 
+Work inspired by "Data Science from Scratch" Youtube series from [Ken Jee](https://www.youtube.com/channel/UCiT9RITQ9PW6BhXK0y2jaeg). 
+
 ## Code and Resources Used 
 **Python Version:** 2.7.16 and 3.8.3 <br>
 **Packages:** pandas, numpy, sklearn, matplotlib, selenium, flask, json, pickle <br>
